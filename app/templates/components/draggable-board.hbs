@@ -1,0 +1,27 @@
+<div class="selected-users">
+  {{#draggable-dropzone dropped=(action "addUser")}}
+    <ul class="selected-users-list">
+      {{#each selectedUsers as |user|}}
+        <li>{{user.firstName}}</li>
+      {{/each}} 
+    </ul>
+  {{/draggable-dropzone}}
+</div>
+
+<div class="available-users">
+  <header>
+    <h4>Users left to add: {{remainingUsersLength}} </h4>
+  </header>
+  {{#each remainingUsers as |user|}}
+    {{#draggable-item content=user.id}}
+      <span>{{user.firstName}}</span> 
+    {{/draggable-item}}
+  {{else}}
+    <p>There is no one left to add!</p>
+  {{/each}}
+</div>
+
+<div class="controls">
+  <button class="btn" {{action "addAllUsers"}}>Add everyone</button>
+  <button class="btn" {{action "removeAllUsers"}}>Remove everyone</button>
+</div>

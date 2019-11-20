@@ -1,0 +1,26 @@
+<div class="performance-dashboard">
+  <div class="performance-dashboard__row">
+    <div class="performance-dashboard__description">
+      Here is a bar chart.
+    </div>
+    <div class="performance-dashboard__chart">
+      {{ember-chart type="bar" data=BARCHARTDATA options=BARCHARTOPTIONS}}
+    </div>
+  </div>
+  <div class="performance-dashboard__row">
+    <div class="performance-dashboard__description">
+      Here is a line chart.
+    </div>
+    <div class="performance-dashboard__chart">
+      {{ember-chart type="line" data=LINECHARTDATA options=LINECHARTOPTIONS}}
+    </div>
+  </div>
+  <div class="performance-dashboard__row">
+    <div class="performance-dashboard__description">
+      Here is a pie chart.
+    </div>
+    <div class="performance-dashboard__chart">
+      {{ember-chart type="pie" data=PIECHARTDATA options=PIECHARTOPTIONS}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="calendar-container">
+  {{#each this.model as |calendarPeriod|}}
+    {{calendar-column timePeriod=calendarPeriod.timePeriod
+                      activityContent=calendarPeriod.activityContent
+                      focusContent=calendarPeriod.focusContent}}
+  {{/each}}
+</div>

@@ -1,0 +1,17 @@
+<div class="calendar-column">
+  <div>{{timePeriodFormatted}}</div>
+
+  <div>
+    <label>Activities:</label>
+    {{#each activityContent as |activity|}}
+      {{activity}}
+    {{/each}}
+  </div>
+
+  <div>
+    <label>Focus Areas:</label>
+    {{#each focusContent as |focus|}}
+      {{focus}}
+    {{/each}}
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="">
+  <section class="">
+    <button class="">menu</button>
+    {{#link-to 'index' tagName="span" class=""}}something{{/link-to}}
+  </section>
+  <section class="">
+    {{#if isAuthenticated}}
+      {{#link-to 'logout' class=""}}{{ buttonText }}{{/link-to}}
+    {{else}}
+      {{#link-to 'login' class=""}}{{ buttonText }}{{/link-to}}
+    {{/if}}
+  </section>
+</div>

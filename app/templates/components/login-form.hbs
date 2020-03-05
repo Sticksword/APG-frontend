@@ -1,0 +1,17 @@
+
+{{#paper-form onSubmit="createUser" as |form|}}
+  <div class="layout-column">
+    {{form.input label="First Name" value=firstName onChange=(action (mut firstName)) required=true}}
+
+    {{form.input label="Last Name" value=lastName onChange=(action (mut lastName))}}
+
+    {{form.input label="Email" value=email onChange=(action (mut email)) maxlength=65 required=true}}
+
+    {{form.input type="password" label="Password" value=password onChange=(action (mut password)) maxlength=31 required=true}}
+
+    {{#form.submit-button raised=true primary=true disabled=form.isInvalid}}Submit{{/form.submit-button}}
+    {{paper-divider}}
+
+    <div>Welcome! We're glad to have you aboard! Already have an account? <button onclick={{action "toggleShowSignIn"}}>Sign in here</button></div>
+  </div>
+{{/paper-form}}

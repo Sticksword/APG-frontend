@@ -1,16 +1,1 @@
-
-{{#paper-form onSubmit="createUser" as |form|}}
-  <div class="layout-column">
-    {{form.input label="First Name" value=firstName onChange=(action (mut firstName)) required=true}}
-    {{ log email }}
-
-    {{form.input label="Last Name" value=lastName onChange=(action (mut lastName))}}
-
-    {{form.input label="Email" value=email onChange=(action (mut email)) maxlength=65 required=true}}
-
-    {{form.input type="password" label="Password" value=password onChange=(action (mut password)) maxlength=31 required=true}}
-
-
-    {{#form.submit-button raised=true primary=true disabled=form.isInvalid}}Submit{{/form.submit-button}}
-  </div>
-{{/paper-form}}
+{{login-form}}

@@ -1,23 +1,23 @@
 @import "ember-paper";
 
 @import "draggable";
-@import "performance-dashboard";
-
-@import "routes/dashboard";
 
 @import "components/calendar-column";
+@import "components/login-form";
+@import "components/nav-bar";
+@import "components/performance-dashboard";
+@import "components/summary-results";
+
+@import "routes/dashboard";
+@import "routes/highlight";
 
 /* Works in all browsers, does not effect other views within your application */
 body > .ember-view {
   height: 100%;
 }
 
-.nav-bar {
-  height: 5%;
-}
-
 .main {
-  height: 95%;
+  height: 92%;
   display: flex;
   justify-content: center;
   align-items: center;

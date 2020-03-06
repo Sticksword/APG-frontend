@@ -10,6 +10,9 @@ Router.map(function() {
   this.route('charts');
   this.route('dashboard');
   this.route('login');
+  this.route('highlight');
+  this.route('developers');
+  this.route('setup');
 });
 
 export default Router;

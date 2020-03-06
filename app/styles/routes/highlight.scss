@@ -1,0 +1,22 @@
+.highlight {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.highlight-url-entry {
+  padding: 16px;
+
+  &__button {
+    padding: 16px 0;
+    width: 100%;
+  }
+}
+
+.highlight-results {
+  border: 0.5px solid lightslategray;
+  border-radius: 8px;
+  height: 100%;
+  margin: 16px;
+}

@@ -1,17 +1,53 @@
 
-{{#paper-form onSubmit="createUser" as |form|}}
+{{#paper-form class="login-form" onSubmit=(if showSignIn 'authenticate' 'signUp') as |form|}}
   <div class="layout-column">
-    {{form.input label="First Name" value=firstName onChange=(action (mut firstName)) required=true}}
+    {{#if showSignup}}
+      <div class="layout-row">
+        <div class="layout-column flex-50">
+          {{form.input label="First Name" value=firstName onChange=(action (mut firstName)) required=true}}
+        </div>
+        <div class="layout-column flex-50">
+          {{form.input label="Last Name" value=lastName onChange=(action (mut lastName))}}
+        </div> 
+      </div>
+    {{/if}}
 
-    {{form.input label="Last Name" value=lastName onChange=(action (mut lastName))}}
+    {{form.input label="Email" value=email onChange=(action (mut email)) customValidations=EMAIL_VALIDATIONS maxlength=65 required=true}}
 
-    {{form.input label="Email" value=email onChange=(action (mut email)) maxlength=65 required=true}}
+    {{form.input type="password"
+                 label="Password"
+                 value=password
+                 onChange=(action (mut password))
+                 customValidations=PASSWORD_VALIDATIONS
+                 maxlength=31
+                 required=true}}
 
-    {{form.input type="password" label="Password" value=password onChange=(action (mut password)) maxlength=31 required=true}}
+    {{#if showSignup}}
+      {{form.input type="password" 
+                   label="Password Verification"
+                   value=passwordVerify
+                   onChange=(action (mut passwordVerify))
+                   customValidations=PASSWORD_VALIDATIONS
+                   errors=(if notMatchingPasswords PASSWORD_MATCH_ERROR_MSG)
+                   maxlength=31
+                   required=true}}
+    {{/if}}
 
-    {{#form.submit-button raised=true primary=true disabled=form.isInvalid}}Submit{{/form.submit-button}}
+    <button class="login-form__submit" raised=true primary=true disabled={{form.isInvalid}} {{action form.onSubmit}}>
+      Create
+    </button>
+
     {{paper-divider}}
 
-    <div>Welcome! We're glad to have you aboard! Already have an account? <button onclick={{action "toggleShowSignIn"}}>Sign in here</button></div>
+    {{#if showSignIn}}
+      <div>
+        Don't have an account? <button {{action "toggleShowSignup"}}>Sign up here!</button>
+      </div>
+    {{else}}
+      <div>
+        Welcome! We're glad to have you aboard!
+      </div>
+      <div>Already have an account? <button {{action "toggleShowSignup"}}>Sign in here!</button></div>
+    {{/if}}
   </div>
 {{/paper-form}}

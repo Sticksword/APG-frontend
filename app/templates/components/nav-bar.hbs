@@ -1,13 +1,19 @@
-<div class="">
-  <section class="">
-    <button class="">menu</button>
-    {{#link-to 'index' tagName="span" class=""}}something{{/link-to}}
-  </section>
-  <section class="">
-    {{#if isAuthenticated}}
-      {{#link-to 'logout' class=""}}{{ buttonText }}{{/link-to}}
-    {{else}}
-      {{#link-to 'login' class=""}}{{ buttonText }}{{/link-to}}
-    {{/if}}
-  </section>
-</div>
+<section class="nav-bar-section">
+  <LinkTo @route="index">Highlight</LinkTo>
+</section>
+<section class="nav-bar-section">
+  <li>
+    <LinkTo @route="highlight">Try it out</LinkTo>
+  </li>
+  <li>
+    <LinkTo @route="setup">Chrome extension</LinkTo>
+  </li>
+  <li>
+    <LinkTo @route="developers">Developers</LinkTo>
+  </li>
+  {{#if isAuthenticated}}
+    <LinkTo @route="logout">Log out</LinkTo>
+  {{else}}
+    <LinkTo @route="login">Log in</LinkTo>
+  {{/if}}
+</section>

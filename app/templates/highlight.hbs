@@ -1,0 +1,10 @@
+<div class="highlight">
+  <div class="highlight-url-entry">
+    {{paper-input block=true label="Paste a URL here" maxlength=150 passThru=(hash rows=5 maxRows=5) value=urlInput onChange=(action (mut urlInput))}}
+    <button class="highlight-url-entry__button" {{action "fetchSummary"}}>Summarize</button>
+  </div>
+
+  <div class="highlight-results">
+    {{summary-results sentences=sentences}}
+  </div>
+</div>

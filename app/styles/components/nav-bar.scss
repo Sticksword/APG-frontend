@@ -1,0 +1,28 @@
+.nav-bar {
+  height: 8%;
+  display: flex;
+  border-bottom: 0.3px solid lightslategray;
+}
+
+.nav-bar-section {
+  width: 100%;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  
+  a {
+    padding: 12px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    background-color: lightslategray;
+    border-radius: 4px;
+    transition: 0.5s;
+  }
+
+  a:hover {
+    background-color: gray;
+  }
+}

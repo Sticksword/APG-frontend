@@ -8,21 +8,27 @@
   width: 100%;
   display: flex;
   list-style: none;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 8px 16px;
   
   a {
-    padding: 12px;
+    padding: 12px 0;
+    margin: 0 12px;
     text-decoration: none;
-    color: black;
+    color: #3e4328;
     font-weight: 500;
-    background-color: lightslategray;
-    border-radius: 4px;
-    transition: 0.5s;
+    transition: 0.5;
   }
 
   a:hover {
-    background-color: gray;
+    border-bottom: 4px solid #d0d6dc;
   }
+}
+
+.nav-bar-section-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
 }

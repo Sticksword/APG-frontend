@@ -1,5 +1,5 @@
-<section class="nav-bar-section">
-  <LinkTo @route="index">Highlight</LinkTo>
+<section class="nav-bar-section-logo">
+  <LinkTo @route="index">{{icons/logo}}</LinkTo>
 </section>
 <section class="nav-bar-section">
   <li>
@@ -11,9 +11,4 @@
   <li>
     <LinkTo @route="developers">Developers</LinkTo>
   </li>
-  {{#if isAuthenticated}}
-    <LinkTo @route="logout">Log out</LinkTo>
-  {{else}}
-    <LinkTo @route="login">Log in</LinkTo>
-  {{/if}}
 </section>

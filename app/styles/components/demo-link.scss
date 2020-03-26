@@ -1,0 +1,21 @@
+.demo-link {
+  width: 400px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  transition: 0.5s;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9
+  }
+
+  &__text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 8px;
+    font-size: 18px;
+  }
+}

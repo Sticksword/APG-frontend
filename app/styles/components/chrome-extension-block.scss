@@ -1,0 +1,20 @@
+.chrome-extension-block {
+  width: 555px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(192, 192, 192, 0.55);
+  border-radius: 32px;
+  flex-direction: column;
+  transition: 0.5;
+  
+  &:hover {
+    background-color: rgba(192, 192, 192, 0.75);
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: rgba(192, 192, 192, 0.65);
+  }
+}

@@ -14,7 +14,7 @@ export default Service.extend({
   },
 
   authenticate(email, password) {
-    return this.ajax.request('/rails-api/authenticate', {
+    return this.ajax.request('/authenticate', {
       method: 'POST',
       data: { email: email, password: password }
     }).then((result) => {
@@ -24,7 +24,7 @@ export default Service.extend({
   },
 
   signUp(email, password, phone, firstName, lastName) {
-    return this.get('ajax').request('/rails-api/users', {
+    return this.get('ajax').request('/users', {
       method: 'POST',
       data: { email: email, password: password, phone: phone, first_name: firstName, last_name: lastName }
     }).then((result) => {

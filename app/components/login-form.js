@@ -60,8 +60,8 @@ export default Component.extend({
     signUp() {
       // maybe do extra validations
 
-      const { email, password, phone, firstName, lastName } = this.getProperties('email', 'password', 'phone', 'firstName', 'lastName');
-      this.get('simpleAuthManager').signUp(email, password, phone, firstName, lastName).then(() => {
+      const { email, password, firstName, lastName } = this.getProperties('email', 'password', 'firstName', 'lastName');
+      this.get('simpleAuthManager').signUp(email, password, firstName, lastName).then(() => {
         console.log('created!!');
       }, (err) => {
         alert('Error creating account and obtaining token: ' + err.responseText);

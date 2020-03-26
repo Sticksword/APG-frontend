@@ -1,5 +1,5 @@
 
-{{#paper-form class="login-form" onSubmit=(if showSignIn 'authenticate' 'signUp') as |form|}}
+{{#paper-form class="login-form" onSubmit=(if showSignup "signUp" "authenticate") as |form|}}
   <div class="layout-column">
     {{#if showSignup}}
       <div class="layout-row">
@@ -33,21 +33,27 @@
                    required=true}}
     {{/if}}
 
-    <button class="login-form__submit" raised=true primary=true disabled={{form.isInvalid}} {{action form.onSubmit}}>
-      Create
+    <button class="login-form__submit" raised="true" primary="true" disabled={{form.isInvalid}} {{action form.onSubmit}}>
+      {{#if showSignup}}
+        Create
+      {{else}}
+        Sign in
+      {{/if}}
     </button>
 
     {{paper-divider}}
 
-    {{#if showSignIn}}
-      <div>
-        Don't have an account? <button {{action "toggleShowSignup"}}>Sign up here!</button>
-      </div>
-    {{else}}
-      <div>
-        Welcome! We're glad to have you aboard!
-      </div>
-      <div>Already have an account? <button {{action "toggleShowSignup"}}>Sign in here!</button></div>
-    {{/if}}
+    <div class="login-form__footer">
+      {{#if showSignup}}
+        <div>
+          Welcome! We're glad to have you aboard!
+        </div>
+        <div>Already have an account? <button {{action "toggleShowSignup"}}>Sign in here!</button></div>
+      {{else}}
+        <div>
+          Don't have an account? <button {{action "toggleShowSignup"}}>Sign up here!</button>
+        </div>
+      {{/if}}
+    </div>
   </div>
 {{/paper-form}}

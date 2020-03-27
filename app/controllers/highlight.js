@@ -35,7 +35,7 @@ export default class ArticlesController extends Controller {
     console.log($('meta[name=csrf-token]').attr('content'));
 
     this.ajax.request('/rails-api/summarize', options).then(response => {
-      this.set('sentences', response);
+      this.set('sentences', response.sentences);
     });
   }
 }

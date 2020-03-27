@@ -30,7 +30,9 @@ export default Route.extend({
   },
 
   setupController(controller, model) {
-    controller.set('sentences', model);
+    if (model) {
+      controller.set('sentences', model.sentences);
+    }
     controller.set('model', model); // this is the default and since we are overriding, we should include it
   },
 

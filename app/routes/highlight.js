@@ -1,5 +1,6 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
+import ENV from 'drag-and-drop-stuff/config/environment';
 
 export default Route.extend({
   queryParams: {
@@ -21,6 +22,7 @@ export default Route.extend({
       method: 'GET',
       data: params
     };
+    console.log(ENV);
 
     if (params.url) {
       return this.ajax.request('/rails-api/summarize', options);

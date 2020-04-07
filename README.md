@@ -25,26 +25,28 @@ Has a demo + Chrome Web Store link. Oh you can also log in but nothing to see cu
 
 ### Deploying
 
-use [ember-cli-deploy-s3](https://github.com/ember-cli-deploy/ember-cli-deploy-s3) to deploy
-use [ember-cli-deploy-json-config](https://github.com/ember-cli-deploy/ember-cli-deploy-json-config) for getting the json that contains paths to the assets
+* use [ember-cli-deploy-s3](https://github.com/ember-cli-deploy/ember-cli-deploy-s3) to deploy
+* use [ember-cli-deploy-json-config](https://github.com/ember-cli-deploy/ember-cli-deploy-json-config) for getting the json that contains paths to the assets
 
-``` bash
-ember deploy production
-```
+1. build
 
-or do it manually
+   ``` bash
+   ember deploy production
+   ```
 
-``` bash
-ember build --environment=production
-aws s3 sync --cache-control 'max-age=604800' --exclude index.html dist/ s3://ember-s3-prod/
-aws s3 sync --cache-control 'no-cache' dist/ s3://ember-s3-prod/
-```
+   or do it manually
 
-then copy the `index.json` file to the rails project `dist` folder
+   ``` bash
+   ember build --environment=production
+   aws s3 sync --cache-control 'max-age=604800' --exclude index.html dist/ s3://ember-s3-prod/
+   aws s3 sync --cache-control 'no-cache' dist/ s3://ember-s3-prod/
+   ```
 
-``` bash
-cp ../APG-frontend/tmp/deploy-dist/index.json dist
-```
+2. then copy the `index.json` file to the rails project `dist` folder
+
+   ``` bash
+   cp ../APG-frontend/tmp/deploy-dist/index.json dist
+   ```
 
 ## Further Reading / Useful Links
 
